@@ -53,9 +53,10 @@ window.onload = function () {
 
 console.log("HELLO")
 const getArtistCards = () => {
+    container.innerHTML = ""
     console.log("hello")
-
-    fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=eminem")
+    const searchInput = document.getElementById("search-input").value
+    fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${searchInput}`)
         .then(resolution => resolution.json())
         .then(resolution => {
 
@@ -73,18 +74,17 @@ const getArtistCards = () => {
 const container = document.getElementById("row")
 
 const createTheCard = (eminem) => {
-
+    
     const artistTemplate =
         `
            <div class="card col-6 col-md-4 col-lg-2">
             <div class="album-container card">
-                <img src="${eminem.album.cover_medium}" class="img-fluid">
+                <a href="test.html"><img src="${eminem.album.cover_medium}" class="img-fluid" ></a>
                     <img id="logo" src="spotifylogo.png" width="30" height="30" alt="">
                         <p class="album-artist card-text">${eminem.title}</p>
             </div>
         </div>
         `
-
 
     container.innerHTML += artistTemplate
 }
