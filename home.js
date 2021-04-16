@@ -79,7 +79,7 @@ const createTheCard = (eminem) => {
         `
            <div class="card col-6 col-md-4 col-lg-2">
             <div class="album-container card">
-                <a href="test.html"><img src="${eminem.album.cover_medium}" class="img-fluid" ></a>
+                <a href="album.html"><img src="${eminem.album.cover_medium}" class="img-fluid" ></a>
                     <img id="logo" src="spotifylogo.png" width="30" height="30" alt="">
                         <p class="album-artist card-text">${eminem.title}</p>
             </div>
