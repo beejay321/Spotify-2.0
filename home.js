@@ -49,18 +49,36 @@ function switchContent(classOnOff) {
 //     ()
 // }
 
+
+
 console.log("HELLO")
 const getArtistCards = () => {
     console.log("hello")
-    fetch("http://striveschool-api.herokuapp.com/api/deezer/artist/412")
+    fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=eminem")
         .then(resolution => resolution.json())
         .then(resolution => {
             console.log("HI")
             console.log(resolution)
+            for (const artist of resolution) createTheCard(artist)
 
         })
 }
 
+const createTheCard = (artist) => {
+
+    const artistTemplate =
+        `
+            <div class="card" >
+                <img src="${artist.picture}" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">${artist.title}</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        `
+    container.innerHTML += artistTemplate
+}
 
 
 
