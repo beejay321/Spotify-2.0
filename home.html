@@ -15,31 +15,30 @@
 
 <body id="home-body">
     <div id="wholepage">
-        <div class="form-outline" style="padding-top: 10px; padding-left: 100px;">
-            <input id="search-input" type="search" id="form1" class="form-control"
-                style="color: rgba(128, 128, 128, 0.445); border-radius: 25px;  width: 300px; display: inline-block"
-                value="eminem" />
-                <button onclick="getArtistCards()">search</button>
-    <nav class="navbar navbar-dark navbar-expand-sm d-flex justify-content-center" id="home-nav">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="#" onclick="switchContent('TRENDING')">TRENDING</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" onclick="switchContent('PODCASTS')">PODCASTS</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" onclick="switchContent('GENRES')">MOODS AND GENRES</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" onclick="switchContent('NEW')">NEW RELEASES</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" onclick="switchContent('DISCOVER')">DISCOVER</a>
-            </li>
-        </ul>
-    </nav>
-
+        <nav class="navbar navbar-dark navbar-expand-sm d-flex justify-content-center" id="home-nav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="switchContent('TRENDING')">TRENDING</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="switchContent('PODCASTS')">PODCASTS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="switchContent('GENRES')">MOODS AND GENRES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="switchContent('NEW')">NEW RELEASES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="switchContent('DISCOVER')">DISCOVER</a>
+                </li>
+            </ul>
+        </nav>
+        <section id="search-nav">
+            <input id="search-input" type="search" id="form1" class="fa fa-search form-control nav-link text-white"
+                style="width: 300px; " value="Eminem" onkeyup="getArtistCards()" />
+        </section>
+        
 
     <section id="wrapper" class="container-fluid">
         <!-- empty section to inject each nav selection -->

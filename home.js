@@ -55,9 +55,9 @@ window.onload = function () {
 
 const searchInput = document.getElementById("search-input").value
 console.log("HELLO")
+const arrayofmovies = []
 const getArtistCards = () => {
 	container.innerHTML = ""
-	console.log("hello")
 	const searchInput = document.getElementById("search-input").value
 	fetch(
 		`https://striveschool-api.herokuapp.com/api/deezer/search?q=${searchInput}`
@@ -68,11 +68,18 @@ const getArtistCards = () => {
 			console.log(resolution)
 			console.log(resolution.data)
 			data = resolution.data
+            data.forEarch
 			data.forEach((object) => {
 				createTheCard(object)
+                arrayofmovies.push(object)
+
 			})
+            
 		})
 }
+console.log("belowthis")
+console.log(arrayofmovies)
+console.log("above this")
 
 const container = document.getElementById("row")
 
@@ -99,10 +106,8 @@ const albumPage = () => {
 				data = resolution.data
 				return data
 			})
-            console.log(data)
     let wholePage = document.querySelector("#wholepage")
-    wholePage.innerHTML = 
-			`<div class="content-page">
+    wholePage.innerHTML = `<div class="content-page">
 				<div class="container p-5">
 					<div class="row">
 						<div class="col-12 col-md-4" id="headerBox">
@@ -114,11 +119,11 @@ const albumPage = () => {
 										class="cover"
 									/>
 									<h2 class="mt-2 mb-0">
-										Bohemian Rhapsody (The Original Soundtrack)
+										${data[0].album.title}
 									</h2>
 									<a href="artist.html">
 										<p class="d-none d-md-block smallest-grey-text mb-4">
-											Queen
+											${data[0].artist.name}
 										</p>
 									</a>
 									<button
